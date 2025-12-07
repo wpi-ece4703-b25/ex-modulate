@@ -1,0 +1,810 @@
+   1              		.arch armv8-a
+   2              		.file	"simple-client.c"
+   3              		.text
+   4              		.global	coef
+   5              		.data
+   6              		.align	3
+   9              	coef:
+  10 0000 00000000 		.word	0
+  11 0004 249EEF37 		.word	938450468
+  12 0008 1F130838 		.word	940053279
+  13 000c B7BC5A37 		.word	928693431
+  14 0010 00000000 		.word	0
+  15 0014 F2D07137 		.word	930205938
+  16 0018 43502638 		.word	942035011
+  17 001c 29E92138 		.word	941746473
+  18 0020 00000080 		.word	-2147483648
+  19 0024 384A34B8 		.word	-1204532680
+  20 0028 903A4EB8 		.word	-1202832752
+  21 002c D2FAA6B7 		.word	-1213793582
+  22 0030 00000080 		.word	-2147483648
+  23 0034 A47DBBB7 		.word	-1212449372
+  24 0038 870382B8 		.word	-1199438969
+  25 003c F84F7FB8 		.word	-1199616008
+  26 0040 00000000 		.word	0
+  27 0044 8DBD9038 		.word	949009805
+  28 0048 1C29A738 		.word	950479132
+  29 004c C9B40838 		.word	940094665
+  30 0050 00000000 		.word	0
+  31 0054 24CD1C38 		.word	941411620
+  32 0058 B9F2DB38 		.word	953938617
+  33 005c E589DA38 		.word	953846245
+  34 0060 00000080 		.word	-2147483648
+  35 0064 A92BFEB8 		.word	-1191302231
+  36 0068 D7C914B9 		.word	-1189819945
+  37 006c 96E076B8 		.word	-1200168810
+  38 0070 00000080 		.word	-2147483648
+  39 0074 E80892B8 		.word	-1198389016
+  40 0078 C74D50B9 		.word	-1185919545
+  41 007c 09A952B9 		.word	-1185765111
+  42 0080 00000000 		.word	0
+  43 0084 45A07E39 		.word	964599877
+  44 0088 D6389839 		.word	966277334
+  45 008c 72240139 		.word	956376178
+  46 0090 00000000 		.word	0
+  47 0094 467F2039 		.word	958431046
+  48 0098 9140EB39 		.word	971718801
+  49 009c C3F7F439 		.word	972355523
+  50 00a0 00000080 		.word	-2147483648
+  51 00a4 7D0C1EBA 		.word	-1172435843
+  52 00a8 240B44BA 		.word	-1169945820
+  53 00ac 1B18ADB9 		.word	-1179838437
+  54 00b0 00000080 		.word	-2147483648
+  55 00b4 6BADEBB9 		.word	-1175736981
+  56 00b8 580AB6BA 		.word	-1162474920
+  57 00bc 29E8C8BA 		.word	-1161238487
+  58 00c0 00000000 		.word	0
+  59 00c4 A4B5143B 		.word	991212964
+  60 00c8 943E483B 		.word	994590356
+  61 00cc 182DC23A 		.word	985804056
+  62 00d0 00000000 		.word	0
+  63 00d4 7831273B 		.word	992424312
+  64 00d8 EF2E163C 		.word	1008086767
+  65 00dc 8F3B473C 		.word	1011301263
+  66 00e0 00000080 		.word	-2147483648
+  67 00e4 6D46FCBC 		.word	-1124317587
+  68 00e8 116983BD 		.word	-1115461359
+  69 00ec 581A86BD 		.word	-1115284904
+  70 00f0 00000000 		.word	0
+  71 00f4 83AE0F3E 		.word	1041215107
+  72 00f8 5543A43E 		.word	1050952533
+  73 00fc 96D0F23E 		.word	1056100502
+  74 0100 77D6083F 		.word	1057543799
+  75 0104 96D0F23E 		.word	1056100502
+  76 0108 5543A43E 		.word	1050952533
+  77 010c 83AE0F3E 		.word	1041215107
+  78 0110 00000000 		.word	0
+  79 0114 581A86BD 		.word	-1115284904
+  80 0118 116983BD 		.word	-1115461359
+  81 011c 6D46FCBC 		.word	-1124317587
+  82 0120 00000080 		.word	-2147483648
+  83 0124 8F3B473C 		.word	1011301263
+  84 0128 EF2E163C 		.word	1008086767
+  85 012c 7831273B 		.word	992424312
+  86 0130 00000000 		.word	0
+  87 0134 182DC23A 		.word	985804056
+  88 0138 943E483B 		.word	994590356
+  89 013c A4B5143B 		.word	991212964
+  90 0140 00000000 		.word	0
+  91 0144 29E8C8BA 		.word	-1161238487
+  92 0148 580AB6BA 		.word	-1162474920
+  93 014c 6BADEBB9 		.word	-1175736981
+  94 0150 00000080 		.word	-2147483648
+  95 0154 1B18ADB9 		.word	-1179838437
+  96 0158 240B44BA 		.word	-1169945820
+  97 015c 7D0C1EBA 		.word	-1172435843
+  98 0160 00000080 		.word	-2147483648
+  99 0164 C3F7F439 		.word	972355523
+ 100 0168 9140EB39 		.word	971718801
+ 101 016c 467F2039 		.word	958431046
+ 102 0170 00000000 		.word	0
+ 103 0174 72240139 		.word	956376178
+ 104 0178 D6389839 		.word	966277334
+ 105 017c 45A07E39 		.word	964599877
+ 106 0180 00000000 		.word	0
+ 107 0184 09A952B9 		.word	-1185765111
+ 108 0188 C74D50B9 		.word	-1185919545
+ 109 018c E80892B8 		.word	-1198389016
+ 110 0190 00000080 		.word	-2147483648
+ 111 0194 96E076B8 		.word	-1200168810
+ 112 0198 D7C914B9 		.word	-1189819945
+ 113 019c A92BFEB8 		.word	-1191302231
+ 114 01a0 00000080 		.word	-2147483648
+ 115 01a4 E589DA38 		.word	953846245
+ 116 01a8 B9F2DB38 		.word	953938617
+ 117 01ac 24CD1C38 		.word	941411620
+ 118 01b0 00000000 		.word	0
+ 119 01b4 C9B40838 		.word	940094665
+ 120 01b8 1C29A738 		.word	950479132
+ 121 01bc 8DBD9038 		.word	949009805
+ 122 01c0 00000000 		.word	0
+ 123 01c4 F84F7FB8 		.word	-1199616008
+ 124 01c8 870382B8 		.word	-1199438969
+ 125 01cc A47DBBB7 		.word	-1212449372
+ 126 01d0 00000080 		.word	-2147483648
+ 127 01d4 D2FAA6B7 		.word	-1213793582
+ 128 01d8 903A4EB8 		.word	-1202832752
+ 129 01dc 384A34B8 		.word	-1204532680
+ 130 01e0 00000080 		.word	-2147483648
+ 131 01e4 29E92138 		.word	941746473
+ 132 01e8 43502638 		.word	942035011
+ 133 01ec F2D07137 		.word	930205938
+ 134 01f0 00000000 		.word	0
+ 135 01f4 B7BC5A37 		.word	928693431
+ 136 01f8 1F130838 		.word	940053279
+ 137 01fc 249EEF37 		.word	938450468
+ 138 0200 00000000 		.word	0
+ 139              		.text
+ 140              		.align	2
+ 141              		.global	nextSymbol
+ 143              	nextSymbol:
+ 144              	.LFB6:
+ 145              		.cfi_startproc
+ 146 0000 FD7BBFA9 		stp	x29, x30, [sp, -16]!
+ 147              		.cfi_def_cfa_offset 16
+ 148              		.cfi_offset 29, -16
+ 149              		.cfi_offset 30, -8
+ 150 0004 FD030091 		mov	x29, sp
+ 151 0008 00000094 		bl	rand
+ 152 000c 1F000071 		cmp	w0, 0
+ 153 0010 00000012 		and	w0, w0, 1
+ 154 0014 00A4805A 		csneg	w0, w0, w0, ge
+ 155 0018 FD7BC1A8 		ldp	x29, x30, [sp], 16
+ 156              		.cfi_restore 30
+ 157              		.cfi_restore 29
+ 158              		.cfi_def_cfa_offset 0
+ 159 001c C0035FD6 		ret
+ 160              		.cfi_endproc
+ 161              	.LFE6:
+ 163              		.local	phase
+ 164              		.comm	phase,4,4
+ 165              		.align	2
+ 166              		.global	nextSample
+ 168              	nextSample:
+ 169              	.LFB7:
+ 170              		.cfi_startproc
+ 171 0020 FD7BBFA9 		stp	x29, x30, [sp, -16]!
+ 172              		.cfi_def_cfa_offset 16
+ 173              		.cfi_offset 29, -16
+ 174              		.cfi_offset 30, -8
+ 175 0024 FD030091 		mov	x29, sp
+ 176 0028 00000090 		adrp	x0, phase
+ 177 002c 00000091 		add	x0, x0, :lo12:phase
+ 178 0030 000040B9 		ldr	w0, [x0]
+ 179 0034 00040011 		add	w0, w0, 1
+ 180 0038 E103006B 		negs	w1, w0
+ 181 003c 00040012 		and	w0, w0, 3
+ 182 0040 21040012 		and	w1, w1, 3
+ 183 0044 0144815A 		csneg	w1, w0, w1, mi
+ 184 0048 00000090 		adrp	x0, phase
+ 185 004c 00000091 		add	x0, x0, :lo12:phase
+ 186 0050 010000B9 		str	w1, [x0]
+ 187 0054 00000090 		adrp	x0, phase
+ 188 0058 00000091 		add	x0, x0, :lo12:phase
+ 189 005c 000040B9 		ldr	w0, [x0]
+ 190 0060 1F000071 		cmp	w0, 0
+ 191 0064 01010054 		bne	.L4
+ 192 0068 00000094 		bl	nextSymbol
+ 193 006c 1F000071 		cmp	w0, 0
+ 194 0070 60000054 		beq	.L5
+ 195 0074 1F102E1E 		fmov	s31, 1.0e+0
+ 196 0078 04000014 		b	.L7
+ 197              	.L5:
+ 198 007c 1F103E1E 		fmov	s31, -1.0e+0
+ 199 0080 02000014 		b	.L7
+ 200              	.L4:
+ 201 0084 1F04000F 		movi	v31.2s, #0
+ 202              	.L7:
+ 203 0088 E043201E 		fmov	s0, s31
+ 204 008c FD7BC1A8 		ldp	x29, x30, [sp], 16
+ 205              		.cfi_restore 30
+ 206              		.cfi_restore 29
+ 207              		.cfi_def_cfa_offset 0
+ 208 0090 C0035FD6 		ret
+ 209              		.cfi_endproc
+ 210              	.LFE7:
+ 212              		.global	taps
+ 213              		.bss
+ 214              		.align	3
+ 217              	taps:
+ 218 0000 00000000 		.zero	516
+ 218      00000000 
+ 218      00000000 
+ 218      00000000 
+ 218      00000000 
+ 219              		.text
+ 220              		.align	2
+ 221              		.global	shapeSample
+ 223              	shapeSample:
+ 224              	.LFB8:
+ 225              		.cfi_startproc
+ 226 0094 FF8300D1 		sub	sp, sp, #32
+ 227              		.cfi_def_cfa_offset 32
+ 228 0098 E00F00BD 		str	s0, [sp, 12]
+ 229 009c 00000090 		adrp	x0, taps
+ 230 00a0 00000091 		add	x0, x0, :lo12:taps
+ 231 00a4 FF0F40BD 		ldr	s31, [sp, 12]
+ 232 00a8 1F0000BD 		str	s31, [x0]
+ 233 00ac FF1F00B9 		str	wzr, [sp, 28]
+ 234 00b0 FF1B00B9 		str	wzr, [sp, 24]
+ 235 00b4 10000014 		b	.L9
+ 236              	.L10:
+ 237 00b8 00000090 		adrp	x0, taps
+ 238 00bc 00000091 		add	x0, x0, :lo12:taps
+ 239 00c0 E11B80B9 		ldrsw	x1, [sp, 24]
+ 240 00c4 1E7861BC 		ldr	s30, [x0, x1, lsl 2]
+ 241 00c8 00000090 		adrp	x0, coef
+ 242 00cc 00000091 		add	x0, x0, :lo12:coef
+ 243 00d0 E11B80B9 		ldrsw	x1, [sp, 24]
+ 244 00d4 1F7861BC 		ldr	s31, [x0, x1, lsl 2]
+ 245 00d8 DF0B3F1E 		fmul	s31, s30, s31
+ 246 00dc FE1F40BD 		ldr	s30, [sp, 28]
+ 247 00e0 DF2B3F1E 		fadd	s31, s30, s31
+ 248 00e4 FF1F00BD 		str	s31, [sp, 28]
+ 249 00e8 E01B40B9 		ldr	w0, [sp, 24]
+ 250 00ec 00040011 		add	w0, w0, 1
+ 251 00f0 E01B00B9 		str	w0, [sp, 24]
+ 252              	.L9:
+ 253 00f4 E01B40B9 		ldr	w0, [sp, 24]
+ 254 00f8 1F000271 		cmp	w0, 128
+ 255 00fc EDFDFF54 		ble	.L10
+ 256 0100 00108052 		mov	w0, 128
+ 257 0104 E01B00B9 		str	w0, [sp, 24]
+ 258 0108 0E000014 		b	.L11
+ 259              	.L12:
+ 260 010c E01B40B9 		ldr	w0, [sp, 24]
+ 261 0110 01040051 		sub	w1, w0, #1
+ 262 0114 00000090 		adrp	x0, taps
+ 263 0118 00000091 		add	x0, x0, :lo12:taps
+ 264 011c 217C4093 		sxtw	x1, w1
+ 265 0120 1F7861BC 		ldr	s31, [x0, x1, lsl 2]
+ 266 0124 00000090 		adrp	x0, taps
+ 267 0128 00000091 		add	x0, x0, :lo12:taps
+ 268 012c E11B80B9 		ldrsw	x1, [sp, 24]
+ 269 0130 1F7821BC 		str	s31, [x0, x1, lsl 2]
+ 270 0134 E01B40B9 		ldr	w0, [sp, 24]
+ 271 0138 00040051 		sub	w0, w0, #1
+ 272 013c E01B00B9 		str	w0, [sp, 24]
+ 273              	.L11:
+ 274 0140 E01B40B9 		ldr	w0, [sp, 24]
+ 275 0144 1F000071 		cmp	w0, 0
+ 276 0148 2CFEFF54 		bgt	.L12
+ 277 014c FF1F40BD 		ldr	s31, [sp, 28]
+ 278 0150 E043201E 		fmov	s0, s31
+ 279 0154 FF830091 		add	sp, sp, 32
+ 280              		.cfi_def_cfa_offset 0
+ 281 0158 C0035FD6 		ret
+ 282              		.cfi_endproc
+ 283              	.LFE8:
+ 285              		.global	symboltaps
+ 286              		.bss
+ 287 0204 00000000 		.align	3
+ 290              	symboltaps:
+ 291 0208 00000000 		.zero	132
+ 291      00000000 
+ 291      00000000 
+ 291      00000000 
+ 291      00000000 
+ 292              		.text
+ 293              		.align	2
+ 294              		.global	shapeSampleMultirate
+ 296              	shapeSampleMultirate:
+ 297              	.LFB9:
+ 298              		.cfi_startproc
+ 299 015c FF8300D1 		sub	sp, sp, #32
+ 300              		.cfi_def_cfa_offset 32
+ 301 0160 E00F00BD 		str	s0, [sp, 12]
+ 302 0164 FF0F40BD 		ldr	s31, [sp, 12]
+ 303 0168 FF1700BD 		str	s31, [sp, 20]
+ 304 016c 00000090 		adrp	x0, phase
+ 305 0170 00000091 		add	x0, x0, :lo12:phase
+ 306 0174 000040B9 		ldr	w0, [x0]
+ 307 0178 1F000071 		cmp	w0, 0
+ 308 017c 01030054 		bne	.L15
+ 309 0180 00000090 		adrp	x0, symboltaps
+ 310 0184 00000091 		add	x0, x0, :lo12:symboltaps
+ 311 0188 FF1740BD 		ldr	s31, [sp, 20]
+ 312 018c 1F0000BD 		str	s31, [x0]
+ 313 0190 00048052 		mov	w0, 32
+ 314 0194 E01F00B9 		str	w0, [sp, 28]
+ 315 0198 0E000014 		b	.L16
+ 316              	.L17:
+ 317 019c E01F40B9 		ldr	w0, [sp, 28]
+ 318 01a0 01040051 		sub	w1, w0, #1
+ 319 01a4 00000090 		adrp	x0, symboltaps
+ 320 01a8 00000091 		add	x0, x0, :lo12:symboltaps
+ 321 01ac 217C4093 		sxtw	x1, w1
+ 322 01b0 1F7861BC 		ldr	s31, [x0, x1, lsl 2]
+ 323 01b4 00000090 		adrp	x0, symboltaps
+ 324 01b8 00000091 		add	x0, x0, :lo12:symboltaps
+ 325 01bc E11F80B9 		ldrsw	x1, [sp, 28]
+ 326 01c0 1F7821BC 		str	s31, [x0, x1, lsl 2]
+ 327 01c4 E01F40B9 		ldr	w0, [sp, 28]
+ 328 01c8 00040051 		sub	w0, w0, #1
+ 329 01cc E01F00B9 		str	w0, [sp, 28]
+ 330              	.L16:
+ 331 01d0 E01F40B9 		ldr	w0, [sp, 28]
+ 332 01d4 1F000071 		cmp	w0, 0
+ 333 01d8 2CFEFF54 		bgt	.L17
+ 334              	.L15:
+ 335 01dc FF1B00B9 		str	wzr, [sp, 24]
+ 336 01e0 00000090 		adrp	x0, phase
+ 337 01e4 00000091 		add	x0, x0, :lo12:phase
+ 338 01e8 000040B9 		ldr	w0, [x0]
+ 339 01ec 1F000071 		cmp	w0, 0
+ 340 01f0 61000054 		bne	.L18
+ 341 01f4 20048052 		mov	w0, 33
+ 342 01f8 02000014 		b	.L19
+ 343              	.L18:
+ 344 01fc 00048052 		mov	w0, 32
+ 345              	.L19:
+ 346 0200 E01300B9 		str	w0, [sp, 16]
+ 347 0204 FF1F00B9 		str	wzr, [sp, 28]
+ 348 0208 17000014 		b	.L20
+ 349              	.L21:
+ 350 020c 00000090 		adrp	x0, symboltaps
+ 351 0210 00000091 		add	x0, x0, :lo12:symboltaps
+ 352 0214 E11F80B9 		ldrsw	x1, [sp, 28]
+ 353 0218 1E7861BC 		ldr	s30, [x0, x1, lsl 2]
+ 354 021c E01F40B9 		ldr	w0, [sp, 28]
+ 355 0220 01741E53 		lsl	w1, w0, 2
+ 356 0224 00000090 		adrp	x0, phase
+ 357 0228 00000091 		add	x0, x0, :lo12:phase
+ 358 022c 000040B9 		ldr	w0, [x0]
+ 359 0230 2000000B 		add	w0, w1, w0
+ 360 0234 01040011 		add	w1, w0, 1
+ 361 0238 00000090 		adrp	x0, coef
+ 362 023c 00000091 		add	x0, x0, :lo12:coef
+ 363 0240 217C4093 		sxtw	x1, w1
+ 364 0244 1F7861BC 		ldr	s31, [x0, x1, lsl 2]
+ 365 0248 DF0B3F1E 		fmul	s31, s30, s31
+ 366 024c FE1B40BD 		ldr	s30, [sp, 24]
+ 367 0250 DF2B3F1E 		fadd	s31, s30, s31
+ 368 0254 FF1B00BD 		str	s31, [sp, 24]
+ 369 0258 E01F40B9 		ldr	w0, [sp, 28]
+ 370 025c 00040011 		add	w0, w0, 1
+ 371 0260 E01F00B9 		str	w0, [sp, 28]
+ 372              	.L20:
+ 373 0264 E11F40B9 		ldr	w1, [sp, 28]
+ 374 0268 E01340B9 		ldr	w0, [sp, 16]
+ 375 026c 3F00006B 		cmp	w1, w0
+ 376 0270 EBFCFF54 		blt	.L21
+ 377 0274 FF1B40BD 		ldr	s31, [sp, 24]
+ 378 0278 E043201E 		fmov	s0, s31
+ 379 027c FF830091 		add	sp, sp, 32
+ 380              		.cfi_def_cfa_offset 0
+ 381 0280 C0035FD6 		ret
+ 382              		.cfi_endproc
+ 383              	.LFE9:
+ 385              		.global	input_port_left
+ 386              		.bss
+ 387 028c 00000000 		.align	3
+ 390              	input_port_left:
+ 391 0290 00000000 		.zero	8
+ 391      00000000 
+ 392              		.global	output_port_left
+ 393              		.align	3
+ 396              	output_port_left:
+ 397 0298 00000000 		.zero	8
+ 397      00000000 
+ 398              		.global	input_port_right
+ 399              		.align	3
+ 402              	input_port_right:
+ 403 02a0 00000000 		.zero	8
+ 403      00000000 
+ 404              		.global	output_port_right
+ 405              		.align	3
+ 408              	output_port_right:
+ 409 02a8 00000000 		.zero	8
+ 409      00000000 
+ 410              		.global	client
+ 411              		.align	3
+ 414              	client:
+ 415 02b0 00000000 		.zero	8
+ 415      00000000 
+ 416              		.text
+ 417              		.align	2
+ 418              		.global	process
+ 420              	process:
+ 421              	.LFB10:
+ 422              		.cfi_startproc
+ 423 0284 FD7BBBA9 		stp	x29, x30, [sp, -80]!
+ 424              		.cfi_def_cfa_offset 80
+ 425              		.cfi_offset 29, -80
+ 426              		.cfi_offset 30, -72
+ 427 0288 FD030091 		mov	x29, sp
+ 428 028c F30B00F9 		str	x19, [sp, 16]
+ 429              		.cfi_offset 19, -64
+ 430 0290 E02F00B9 		str	w0, [sp, 44]
+ 431 0294 E11300F9 		str	x1, [sp, 32]
+ 432 0298 00000090 		adrp	x0, output_port_left
+ 433 029c 00000091 		add	x0, x0, :lo12:output_port_left
+ 434 02a0 000040F9 		ldr	x0, [x0]
+ 435 02a4 E12F40B9 		ldr	w1, [sp, 44]
+ 436 02a8 00000094 		bl	jack_port_get_buffer
+ 437 02ac E02300F9 		str	x0, [sp, 64]
+ 438 02b0 00000090 		adrp	x0, output_port_right
+ 439 02b4 00000091 		add	x0, x0, :lo12:output_port_right
+ 440 02b8 000040F9 		ldr	x0, [x0]
+ 441 02bc E12F40B9 		ldr	w1, [sp, 44]
+ 442 02c0 00000094 		bl	jack_port_get_buffer
+ 443 02c4 E01F00F9 		str	x0, [sp, 56]
+ 444 02c8 FF4F00B9 		str	wzr, [sp, 76]
+ 445 02cc 1B000014 		b	.L24
+ 446              	.L27:
+ 447 02d0 00000094 		bl	nextSample
+ 448 02d4 E03700BD 		str	s0, [sp, 52]
+ 449 02d8 E04F80B9 		ldrsw	x0, [sp, 76]
+ 450 02dc 00F47ED3 		lsl	x0, x0, 2
+ 451 02e0 E12340F9 		ldr	x1, [sp, 64]
+ 452 02e4 3300008B 		add	x19, x1, x0
+ 453 02e8 E03740BD 		ldr	s0, [sp, 52]
+ 454 02ec 00000094 		bl	shapeSampleMultirate
+ 455 02f0 1F40201E 		fmov	s31, s0
+ 456 02f4 7F0200BD 		str	s31, [x19]
+ 457 02f8 00000090 		adrp	x0, phase
+ 458 02fc 00000091 		add	x0, x0, :lo12:phase
+ 459 0300 000040B9 		ldr	w0, [x0]
+ 460 0304 1F000071 		cmp	w0, 0
+ 461 0308 61000054 		bne	.L25
+ 462 030c 1F10211E 		fmov	s31, 3.0e+0
+ 463 0310 02000014 		b	.L26
+ 464              	.L25:
+ 465 0314 1F10311E 		fmov	s31, -3.0e+0
+ 466              	.L26:
+ 467 0318 E04F80B9 		ldrsw	x0, [sp, 76]
+ 468 031c 00F47ED3 		lsl	x0, x0, 2
+ 469 0320 E11F40F9 		ldr	x1, [sp, 56]
+ 470 0324 2000008B 		add	x0, x1, x0
+ 471 0328 1F0000BD 		str	s31, [x0]
+ 472 032c E04F40B9 		ldr	w0, [sp, 76]
+ 473 0330 00040011 		add	w0, w0, 1
+ 474 0334 E04F00B9 		str	w0, [sp, 76]
+ 475              	.L24:
+ 476 0338 E04F40B9 		ldr	w0, [sp, 76]
+ 477 033c E12F40B9 		ldr	w1, [sp, 44]
+ 478 0340 3F00006B 		cmp	w1, w0
+ 479 0344 68FCFF54 		bhi	.L27
+ 480 0348 00008052 		mov	w0, 0
+ 481 034c F30B40F9 		ldr	x19, [sp, 16]
+ 482 0350 FD7BC5A8 		ldp	x29, x30, [sp], 80
+ 483              		.cfi_restore 30
+ 484              		.cfi_restore 29
+ 485              		.cfi_restore 19
+ 486              		.cfi_def_cfa_offset 0
+ 487 0354 C0035FD6 		ret
+ 488              		.cfi_endproc
+ 489              	.LFE10:
+ 491              		.align	2
+ 492              		.global	jack_shutdown
+ 494              	jack_shutdown:
+ 495              	.LFB11:
+ 496              		.cfi_startproc
+ 497 0358 FD7BBEA9 		stp	x29, x30, [sp, -32]!
+ 498              		.cfi_def_cfa_offset 32
+ 499              		.cfi_offset 29, -32
+ 500              		.cfi_offset 30, -24
+ 501 035c FD030091 		mov	x29, sp
+ 502 0360 E00F00F9 		str	x0, [sp, 24]
+ 503 0364 20008052 		mov	w0, 1
+ 504 0368 00000094 		bl	exit
+ 505              		.cfi_endproc
+ 506              	.LFE11:
+ 508              		.section	.rodata
+ 509              		.align	3
+ 510              	.LC0:
+ 511 0000 73696D70 		.string	"simple"
+ 511      6C6500
+ 512 0007 00       		.align	3
+ 513              	.LC1:
+ 514 0008 6A61636B 		.string	"jack_client_open() failed, status = 0x%2.0x\n"
+ 514      5F636C69 
+ 514      656E745F 
+ 514      6F70656E 
+ 514      28292066 
+ 515 0035 000000   		.align	3
+ 516              	.LC2:
+ 517 0038 556E6162 		.string	"Unable to connect to JACK server\n"
+ 517      6C652074 
+ 517      6F20636F 
+ 517      6E6E6563 
+ 517      7420746F 
+ 518 005a 00000000 		.align	3
+ 518      0000
+ 519              	.LC3:
+ 520 0060 4A41434B 		.string	"JACK server started\n"
+ 520      20736572 
+ 520      76657220 
+ 520      73746172 
+ 520      7465640A 
+ 521 0075 000000   		.align	3
+ 522              	.LC4:
+ 523 0078 756E6971 		.string	"unique name `%s' assigned\n"
+ 523      7565206E 
+ 523      616D6520 
+ 523      60257327 
+ 523      20617373 
+ 524 0093 00000000 		.align	3
+ 524      00
+ 525              	.LC5:
+ 526 0098 656E6769 		.string	"engine sample rate: %u\n"
+ 526      6E652073 
+ 526      616D706C 
+ 526      65207261 
+ 526      74653A20 
+ 527              		.align	3
+ 528              	.LC6:
+ 529 00b0 33322062 		.string	"32 bit float mono audio"
+ 529      69742066 
+ 529      6C6F6174 
+ 529      206D6F6E 
+ 529      6F206175 
+ 530              		.align	3
+ 531              	.LC7:
+ 532 00c8 696E7075 		.string	"input_left"
+ 532      745F6C65 
+ 532      667400
+ 533 00d3 00000000 		.align	3
+ 533      00
+ 534              	.LC8:
+ 535 00d8 6F757470 		.string	"output_left"
+ 535      75745F6C 
+ 535      65667400 
+ 536 00e4 00000000 		.align	3
+ 537              	.LC9:
+ 538 00e8 696E7075 		.string	"input_right"
+ 538      745F7269 
+ 538      67687400 
+ 539 00f4 00000000 		.align	3
+ 540              	.LC10:
+ 541 00f8 6F757470 		.string	"output_right"
+ 541      75745F72 
+ 541      69676874 
+ 541      00
+ 542 0105 000000   		.align	3
+ 543              	.LC11:
+ 544 0108 6E6F206D 		.string	"no more JACK ports available\n"
+ 544      6F726520 
+ 544      4A41434B 
+ 544      20706F72 
+ 544      74732061 
+ 545 0126 0000     		.align	3
+ 546              	.LC12:
+ 547 0128 63616E6E 		.string	"cannot activate client"
+ 547      6F742061 
+ 547      63746976 
+ 547      61746520 
+ 547      636C6965 
+ 548              		.text
+ 549              		.align	2
+ 550              		.global	main
+ 552              	main:
+ 553              	.LFB12:
+ 554              		.cfi_startproc
+ 555 036c FD7BBCA9 		stp	x29, x30, [sp, -64]!
+ 556              		.cfi_def_cfa_offset 64
+ 557              		.cfi_offset 29, -64
+ 558              		.cfi_offset 30, -56
+ 559 0370 FD030091 		mov	x29, sp
+ 560 0374 E01F00B9 		str	w0, [sp, 28]
+ 561 0378 E10B00F9 		str	x1, [sp, 16]
+ 562 037c 00000090 		adrp	x0, .LC0
+ 563 0380 00000091 		add	x0, x0, :lo12:.LC0
+ 564 0384 E01F00F9 		str	x0, [sp, 56]
+ 565 0388 FF1B00F9 		str	xzr, [sp, 48]
+ 566 038c FF2F00B9 		str	wzr, [sp, 44]
+ 567 0390 E0A30091 		add	x0, sp, 40
+ 568 0394 E31B40F9 		ldr	x3, [sp, 48]
+ 569 0398 E20300AA 		mov	x2, x0
+ 570 039c E12F40B9 		ldr	w1, [sp, 44]
+ 571 03a0 E01F40F9 		ldr	x0, [sp, 56]
+ 572 03a4 00000094 		bl	jack_client_open
+ 573 03a8 E10300AA 		mov	x1, x0
+ 574 03ac 00000090 		adrp	x0, client
+ 575 03b0 00000091 		add	x0, x0, :lo12:client
+ 576 03b4 010000F9 		str	x1, [x0]
+ 577 03b8 00000090 		adrp	x0, client
+ 578 03bc 00000091 		add	x0, x0, :lo12:client
+ 579 03c0 000040F9 		ldr	x0, [x0]
+ 580 03c4 1F0000F1 		cmp	x0, 0
+ 581 03c8 21030054 		bne	.L31
+ 582 03cc 00000090 		adrp	x0, :got:stderr;ldr	x0, [x0, :got_lo12:stderr]
+ 582      000040F9 
+ 583 03d4 030040F9 		ldr	x3, [x0]
+ 584 03d8 E02B40B9 		ldr	w0, [sp, 40]
+ 585 03dc E203002A 		mov	w2, w0
+ 586 03e0 00000090 		adrp	x0, .LC1
+ 587 03e4 01000091 		add	x1, x0, :lo12:.LC1
+ 588 03e8 E00303AA 		mov	x0, x3
+ 589 03ec 00000094 		bl	fprintf
+ 590 03f0 E02B40B9 		ldr	w0, [sp, 40]
+ 591 03f4 00001C12 		and	w0, w0, 16
+ 592 03f8 1F000071 		cmp	w0, 0
+ 593 03fc 40010054 		beq	.L32
+ 594 0400 00000090 		adrp	x0, :got:stderr;ldr	x0, [x0, :got_lo12:stderr]
+ 594      000040F9 
+ 595 0408 000040F9 		ldr	x0, [x0]
+ 596 040c E30300AA 		mov	x3, x0
+ 597 0410 220480D2 		mov	x2, 33
+ 598 0414 210080D2 		mov	x1, 1
+ 599 0418 00000090 		adrp	x0, .LC2
+ 600 041c 00000091 		add	x0, x0, :lo12:.LC2
+ 601 0420 00000094 		bl	fwrite
+ 602              	.L32:
+ 603 0424 20008052 		mov	w0, 1
+ 604 0428 00000094 		bl	exit
+ 605              	.L31:
+ 606 042c E02B40B9 		ldr	w0, [sp, 40]
+ 607 0430 00001D12 		and	w0, w0, 8
+ 608 0434 1F000071 		cmp	w0, 0
+ 609 0438 40010054 		beq	.L33
+ 610 043c 00000090 		adrp	x0, :got:stderr;ldr	x0, [x0, :got_lo12:stderr]
+ 610      000040F9 
+ 611 0444 000040F9 		ldr	x0, [x0]
+ 612 0448 E30300AA 		mov	x3, x0
+ 613 044c 820280D2 		mov	x2, 20
+ 614 0450 210080D2 		mov	x1, 1
+ 615 0454 00000090 		adrp	x0, .LC3
+ 616 0458 00000091 		add	x0, x0, :lo12:.LC3
+ 617 045c 00000094 		bl	fwrite
+ 618              	.L33:
+ 619 0460 E02B40B9 		ldr	w0, [sp, 40]
+ 620 0464 00001E12 		and	w0, w0, 4
+ 621 0468 1F000071 		cmp	w0, 0
+ 622 046c C0010054 		beq	.L34
+ 623 0470 00000090 		adrp	x0, client
+ 624 0474 00000091 		add	x0, x0, :lo12:client
+ 625 0478 000040F9 		ldr	x0, [x0]
+ 626 047c 00000094 		bl	jack_get_client_name
+ 627 0480 E01F00F9 		str	x0, [sp, 56]
+ 628 0484 00000090 		adrp	x0, :got:stderr;ldr	x0, [x0, :got_lo12:stderr]
+ 628      000040F9 
+ 629 048c 030040F9 		ldr	x3, [x0]
+ 630 0490 E21F40F9 		ldr	x2, [sp, 56]
+ 631 0494 00000090 		adrp	x0, .LC4
+ 632 0498 01000091 		add	x1, x0, :lo12:.LC4
+ 633 049c E00303AA 		mov	x0, x3
+ 634 04a0 00000094 		bl	fprintf
+ 635              	.L34:
+ 636 04a4 00000090 		adrp	x0, client
+ 637 04a8 00000091 		add	x0, x0, :lo12:client
+ 638 04ac 030040F9 		ldr	x3, [x0]
+ 639 04b0 020080D2 		mov	x2, 0
+ 640 04b4 00000090 		adrp	x0, process
+ 641 04b8 01000091 		add	x1, x0, :lo12:process
+ 642 04bc E00303AA 		mov	x0, x3
+ 643 04c0 00000094 		bl	jack_set_process_callback
+ 644 04c4 00000090 		adrp	x0, client
+ 645 04c8 00000091 		add	x0, x0, :lo12:client
+ 646 04cc 030040F9 		ldr	x3, [x0]
+ 647 04d0 020080D2 		mov	x2, 0
+ 648 04d4 00000090 		adrp	x0, jack_shutdown
+ 649 04d8 01000091 		add	x1, x0, :lo12:jack_shutdown
+ 650 04dc E00303AA 		mov	x0, x3
+ 651 04e0 00000094 		bl	jack_on_shutdown
+ 652 04e4 00000090 		adrp	x0, client
+ 653 04e8 00000091 		add	x0, x0, :lo12:client
+ 654 04ec 000040F9 		ldr	x0, [x0]
+ 655 04f0 00000094 		bl	jack_get_sample_rate
+ 656 04f4 E103002A 		mov	w1, w0
+ 657 04f8 00000090 		adrp	x0, .LC5
+ 658 04fc 00000091 		add	x0, x0, :lo12:.LC5
+ 659 0500 00000094 		bl	printf
+ 660 0504 00000090 		adrp	x0, client
+ 661 0508 00000091 		add	x0, x0, :lo12:client
+ 662 050c 050040F9 		ldr	x5, [x0]
+ 663 0510 040080D2 		mov	x4, 0
+ 664 0514 230080D2 		mov	x3, 1
+ 665 0518 00000090 		adrp	x0, .LC6
+ 666 051c 02000091 		add	x2, x0, :lo12:.LC6
+ 667 0520 00000090 		adrp	x0, .LC7
+ 668 0524 01000091 		add	x1, x0, :lo12:.LC7
+ 669 0528 E00305AA 		mov	x0, x5
+ 670 052c 00000094 		bl	jack_port_register
+ 671 0530 E10300AA 		mov	x1, x0
+ 672 0534 00000090 		adrp	x0, input_port_left
+ 673 0538 00000091 		add	x0, x0, :lo12:input_port_left
+ 674 053c 010000F9 		str	x1, [x0]
+ 675 0540 00000090 		adrp	x0, client
+ 676 0544 00000091 		add	x0, x0, :lo12:client
+ 677 0548 050040F9 		ldr	x5, [x0]
+ 678 054c 040080D2 		mov	x4, 0
+ 679 0550 430080D2 		mov	x3, 2
+ 680 0554 00000090 		adrp	x0, .LC6
+ 681 0558 02000091 		add	x2, x0, :lo12:.LC6
+ 682 055c 00000090 		adrp	x0, .LC8
+ 683 0560 01000091 		add	x1, x0, :lo12:.LC8
+ 684 0564 E00305AA 		mov	x0, x5
+ 685 0568 00000094 		bl	jack_port_register
+ 686 056c E10300AA 		mov	x1, x0
+ 687 0570 00000090 		adrp	x0, output_port_left
+ 688 0574 00000091 		add	x0, x0, :lo12:output_port_left
+ 689 0578 010000F9 		str	x1, [x0]
+ 690 057c 00000090 		adrp	x0, client
+ 691 0580 00000091 		add	x0, x0, :lo12:client
+ 692 0584 050040F9 		ldr	x5, [x0]
+ 693 0588 040080D2 		mov	x4, 0
+ 694 058c 230080D2 		mov	x3, 1
+ 695 0590 00000090 		adrp	x0, .LC6
+ 696 0594 02000091 		add	x2, x0, :lo12:.LC6
+ 697 0598 00000090 		adrp	x0, .LC9
+ 698 059c 01000091 		add	x1, x0, :lo12:.LC9
+ 699 05a0 E00305AA 		mov	x0, x5
+ 700 05a4 00000094 		bl	jack_port_register
+ 701 05a8 E10300AA 		mov	x1, x0
+ 702 05ac 00000090 		adrp	x0, input_port_right
+ 703 05b0 00000091 		add	x0, x0, :lo12:input_port_right
+ 704 05b4 010000F9 		str	x1, [x0]
+ 705 05b8 00000090 		adrp	x0, client
+ 706 05bc 00000091 		add	x0, x0, :lo12:client
+ 707 05c0 050040F9 		ldr	x5, [x0]
+ 708 05c4 040080D2 		mov	x4, 0
+ 709 05c8 430080D2 		mov	x3, 2
+ 710 05cc 00000090 		adrp	x0, .LC6
+ 711 05d0 02000091 		add	x2, x0, :lo12:.LC6
+ 712 05d4 00000090 		adrp	x0, .LC10
+ 713 05d8 01000091 		add	x1, x0, :lo12:.LC10
+ 714 05dc E00305AA 		mov	x0, x5
+ 715 05e0 00000094 		bl	jack_port_register
+ 716 05e4 E10300AA 		mov	x1, x0
+ 717 05e8 00000090 		adrp	x0, output_port_right
+ 718 05ec 00000091 		add	x0, x0, :lo12:output_port_right
+ 719 05f0 010000F9 		str	x1, [x0]
+ 720 05f4 00000090 		adrp	x0, input_port_left
+ 721 05f8 00000091 		add	x0, x0, :lo12:input_port_left
+ 722 05fc 000040F9 		ldr	x0, [x0]
+ 723 0600 1F0000F1 		cmp	x0, 0
+ 724 0604 00020054 		beq	.L35
+ 725 0608 00000090 		adrp	x0, output_port_left
+ 726 060c 00000091 		add	x0, x0, :lo12:output_port_left
+ 727 0610 000040F9 		ldr	x0, [x0]
+ 728 0614 1F0000F1 		cmp	x0, 0
+ 729 0618 60010054 		beq	.L35
+ 730 061c 00000090 		adrp	x0, input_port_right
+ 731 0620 00000091 		add	x0, x0, :lo12:input_port_right
+ 732 0624 000040F9 		ldr	x0, [x0]
+ 733 0628 1F0000F1 		cmp	x0, 0
+ 734 062c C0000054 		beq	.L35
+ 735 0630 00000090 		adrp	x0, output_port_right
+ 736 0634 00000091 		add	x0, x0, :lo12:output_port_right
+ 737 0638 000040F9 		ldr	x0, [x0]
+ 738 063c 1F0000F1 		cmp	x0, 0
+ 739 0640 81010054 		bne	.L36
+ 740              	.L35:
+ 741 0644 00000090 		adrp	x0, :got:stderr;ldr	x0, [x0, :got_lo12:stderr]
+ 741      000040F9 
+ 742 064c 000040F9 		ldr	x0, [x0]
+ 743 0650 E30300AA 		mov	x3, x0
+ 744 0654 A20380D2 		mov	x2, 29
+ 745 0658 210080D2 		mov	x1, 1
+ 746 065c 00000090 		adrp	x0, .LC11
+ 747 0660 00000091 		add	x0, x0, :lo12:.LC11
+ 748 0664 00000094 		bl	fwrite
+ 749 0668 20008052 		mov	w0, 1
+ 750 066c 00000094 		bl	exit
+ 751              	.L36:
+ 752 0670 00000090 		adrp	x0, client
+ 753 0674 00000091 		add	x0, x0, :lo12:client
+ 754 0678 000040F9 		ldr	x0, [x0]
+ 755 067c 00000094 		bl	jack_activate
+ 756 0680 1F000071 		cmp	w0, 0
+ 757 0684 80010054 		beq	.L37
+ 758 0688 00000090 		adrp	x0, :got:stderr;ldr	x0, [x0, :got_lo12:stderr]
+ 758      000040F9 
+ 759 0690 000040F9 		ldr	x0, [x0]
+ 760 0694 E30300AA 		mov	x3, x0
+ 761 0698 C20280D2 		mov	x2, 22
+ 762 069c 210080D2 		mov	x1, 1
+ 763 06a0 00000090 		adrp	x0, .LC12
+ 764 06a4 00000091 		add	x0, x0, :lo12:.LC12
+ 765 06a8 00000094 		bl	fwrite
+ 766 06ac 20008052 		mov	w0, 1
+ 767 06b0 00000094 		bl	exit
+ 768              	.L37:
+ 769 06b4 40018052 		mov	w0, 10
+ 770 06b8 00000094 		bl	sleep
+ 771 06bc FEFFFF17 		b	.L37
+ 772              		.cfi_endproc
+ 773              	.LFE12:
+ 775              		.ident	"GCC: (Debian 14.2.0-19) 14.2.0"
+ 776              		.section	.note.GNU-stack,"",@progbits
